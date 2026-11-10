@@ -1,88 +1,89 @@
-# 🏠 Framework Didático de Gestão de Aluguel de Imóveis
-### Microsserviços + Componentes de Software + Agentes de IA
-**Universidade Federal de Alagoas — Instituto de Computação (UFAL/IC)**  
-**Disciplina:** Reuso de Software e Metodologias Ágeis | **Docente:** Prof. Dr. Arturo Hernández Domínguez  
+# Framework Didatico de Gestao de Aluguel de Imoveis
+### Microsservicos + Componentes de Software + Agentes de IA
+**Universidade Federal de Alagoas — Instituto de Computacao (UFAL/IC)**  
+**Disciplina:** Reuso de Software e Metodologias Ageis | **Docente:** Prof. Dr. Arturo Hernandez Dominguez  
 **Autor:** Francys Samuel Oliveira Pereira dos Santos  
-**Repositório:** [https://github.com/samueeloliveiraa/framework-aluguel-rsma](https://github.com/samueeloliveiraa/framework-aluguel-rsma)
+**Repositorio:** [https://github.com/samueeloliveiraa/framework-aluguel-rsma](https://github.com/samueeloliveiraa/framework-aluguel-rsma)
 
-Este projeto foi desenvolvido como um **framework conceitual e didático**, simples e direto, para demonstrar na prática como estruturar um sistema moderno de locação de casas e apartamentos unindo três pilares fundamentais da engenharia de software contemporânea:
+Este projeto foi desenvolvido como um **framework conceitual e didatico**, simples e direto, para demonstrar na pratica como estruturar um sistema moderno de locacao de casas e apartamentos unindo tres pilares fundamentais da engenharia de software contemporanea:
 
-1. **Microsserviços (Microservices)**: Divisão de responsabilidades de negócio e dados independentes.
-2. **Componentes de Software**: Módulos desacoplados e reutilizáveis de lógica de negócio pura.
-3. **Agentes de Inteligência Artificial (AI Agents)**: Entidades orientadas a objetivos com capacidade de raciocínio (ReAct) e acionamento dinâmico de ferramentas (Tool Calling).
+1. **Microsservicos (Microservices)**: Divisao de responsabilidades de negocio e dados independentes.
+2. **Componentes de Software**: Modulos desacoplados e reutilizaveis de logica de negocio pura.
+3. **Agentes de Inteligencia Artificial (AI Agents)**: Entidades orientadas a objetivos com capacidade de raciocinio (ReAct) e acionamento dinamico de ferramentas (Tool Calling).
 
 ---
 
-## 🎯 Arquitetura em Três Pilares
+## 1. Arquitetura em Tres Pilares
 
 ```
-                                  [INTERFACE DO USUÁRIO]
+                                  [INTERFACE DO USUARIO]
                                      (Streamlit Web)
-                                            │
-                                            ▼
-                       ┌─────────────────────────────────────────┐
-                       │       MICROSSERVIÇO DE AGENTE AI        │
-                       │           (AIAgentService)              │
-                       │    Loop ReAct: Percepção ➔ Raciocínio   │
-                       └────────────────────┬────────────────────┘
-                                            │ (Tool Calling)
-                   ┌────────────────────────┼────────────────────────┐
-                   │                        │                        │
-                   ▼                        ▼                        ▼
-       ┌──────────────────────┐  ┌─────────────────────┐  ┌─────────────────────┐
-       │   MICROSSERVIÇO      │  │    COMPONENTES      │  │   MICROSSERVIÇO     │
-       │   PropertyService    │  │     REUTILIZÁVEIS   │  │   ContractService   │
-       │                      │  │                     │  │                     │
-       │ • Catálogo de Casas  │  │ • PricingCalculator │  │ • Emissão de Minuta │
-       │ • Catálogo de Aptos  │  │ • RiskEvaluator     │  │ • Assinatura        │
-       │ • Disponibilidade    │  │ • Notification      │  │ • Ciclo do Contrato │
-       └──────────┬───────────┘  └──────────┬──────────┘  └──────────┬──────────┘
-                  │                         │                        │
-                  └─────────────────────────┼────────────────────────┘
-                                            ▼
-                               ┌─────────────────────────┐
-                               │       SERVICE BUS       │
-                               │   Log & Rastreabilidade │
-                               └─────────────────────────┘
+                                            |
+                                            v
+                       +-----------------------------------------+
+                       |       MICROSSERVICO DE AGENTE AI        |
+                       |           (AIAgentService)              |
+                       |    Loop ReAct: Percepcao -> Raciocinio  |
+                       +--------------------+--------------------+
+                                            | (Tool Calling)
+                   +------------------------+------------------------+
+                   |                        |                        |
+                   v                        v                        v
+       +----------------------+  +---------------------+  +---------------------+
+       |   MICROSSERVICO      |  |    COMPONENTES      |  |   MICROSSERVICO     |
+       |   PropertyService    |  |     REUTILIZAVEIS   |  |   ContractService   |
+       |                      |  |                     |  |                     |
+       | - Catalogo de Casas  |  | - PricingCalculator |  | - Emissao de Minuta |
+       | - Catalogo de Aptos  |  | - RiskEvaluator     |  | - Assinatura        |
+       | - Disponibilidade    |  | - Notification      |  | - Ciclo do Contrato |
+       +----------+-----------+  +----------+----------+  +----------+----------+
+                  |                         |                        |
+                  +-------------------------+------------------------+
+                                            |
+                                            v
+                               +-------------------------+
+                               |       SERVICE BUS       |
+                               |   Log & Rastreabilidade |
+                               +-------------------------+
 ```
 
 ---
 
-## 🧩 O que é cada parte? (Para Entender)
+## 2. O que e cada parte? (Para Entender)
 
-### 1. Microsserviços (Microservices)
-Ao invés de um sistema monolítico gigante onde tudo fica no mesmo banco e no mesmo código:
-- **`PropertyService`**: É o serviço especialista em Imóveis. Ele sabe quais casas e apartamentos existem, bairros, quartos, se aceitam pets e seu status (Disponível ou Alugado).
-- **`ContractService`**: É o serviço especialista em Contratos. Cuida de prazos, minuta de contrato, garantias e assinatura.
-- **`AIAgentService`**: É o serviço autônomo de inteligência, atuando como o consultor que interage com os clientes e consome os demais serviços.
+### 2.1 Microsservicos (Microservices)
+Ao inves de um sistema monolitico gigante onde tudo fica no mesmo banco e no mesmo codigo:
+- **`PropertyService`**: E o servico especialista em Imoveis. Ele gerencia quais casas e apartamentos existem, bairros, quartos, se aceitam pets e seu status (Disponivel ou Alugado).
+- **`ContractService`**: E o servico especialista em Contratos. Cuida de prazos, minuta de contrato, garantias e assinatura.
+- **`AIAgentService`**: E o servico autonomo de inteligencia, atuando como o consultor que interage com os clientes e consome os demais servicos.
 
-### 2. Componentes de Software (Software Components)
-São módulos de código reutilizáveis, de lógica determinística e testável:
-- **`PricingCalculatorComponent`**: Encapsula regras financeiras (cálculo de caução, seguro contra incêndio, taxa administrativa e total mensal).
-- **`RiskEvaluatorComponent`**: Encapsula a análise de crédito (regras de comprometimento de renda até 30% a 35%, score e garantia locatícia necessária).
-- **`NotificationComponent`**: Despacha alertas e notificações de eventos para inquilinos e proprietários.
+### 2.2 Componentes de Software (Software Components)
+Sao modulos de codigo reutilizaveis, de logica deterministica e testavel:
+- **`PricingCalculatorComponent`**: Encapsula regras financeiras (calculo de caucao, seguro contra incendio, taxa administrativa e total mensal).
+- **`RiskEvaluatorComponent`**: Encapsula a analise de credito (regras de comprometimento de renda ate 30% a 35%, score e garantia locaticia necessaria).
+- **`NotificationComponent`**: Despacha alertas e notificacoes de eventos para inquilinos e proprietarios.
 
-### 3. Agente de IA (AI Agent)
-Um script tradicional apenas executa um `if/else`. Já o **Agente de IA**:
-- Possui um **Objetivo (Goal)**: Atender às necessidades de moradia do inquilino dentro da sua capacidade financeira real.
+### 2.3 Agente de IA (AI Agent)
+Um script tradicional apenas executa um `if/else`. Ja o **Agente de IA**:
+- Possui um **Objetivo (Goal)**: Atender as necessidades de moradia do inquilino dentro da sua capacidade financeira real.
 - Executa um **Ciclo ReAct (Reasoning + Acting)**:
   1. **Thought (Pensamento)**: Avalia o que o cliente pediu (ex: "tem cachorro e ganha R$ 8.500").
-  2. **Action (Ação)**: Invoca a ferramenta de busca no `PropertyService`.
-  3. **Observation (Observação)**: Analisa os imóveis retornados.
+  2. **Action (Acao)**: Invoca a ferramenta de busca no `PropertyService`.
+  3. **Observation (Observacao)**: Analisa os imoveis retornados.
   4. **Thought (Pensamento)**: Aciona o `RiskEvaluatorComponent` para verificar se a renda cobre o aluguel sem endividar o inquilino.
-  5. **Final Answer (Decisão)**: Gera uma recomendação explicada, ranqueada por score e orienta os próximos passos.
+  5. **Final Answer (Decisao)**: Gera uma recomendacao explicada, ranqueada por score e orienta os proximos passos.
 
 ---
 
-## 🚀 Como Executar
+## 3. Como Executar
 
-### Pré-requisitos
+### Pre-requisitos
 - Python 3.9+ instalado
 - Streamlit
 
-### Passo 1: Entrar no diretório
+### Passo 1: Entrar no diretorio
 ```bash
-cd /home/usuario/Samuel/LLMS/framework_aluguel
+cd framework_aluguel
 ```
 
 ### Passo 2: Executar
@@ -98,25 +99,29 @@ Abra seu navegador em: `http://localhost:8501`
 
 ---
 
-## 📂 Estrutura de Arquivos
+## 4. Estrutura de Arquivos
 
 ```
 framework_aluguel/
-├── app.py                         # Interface Web visual básica (Streamlit)
-├── run.sh                         # Script de inicialização em 1 comando
-├── requirements.txt               # Dependências do projeto
+├── app.py                         # Interface Web visual basica (Streamlit)
+├── run.sh                         # Script de inicializacao em 1 comando
+├── requirements.txt               # Dependencias do projeto
 ├── README.md                      # Este guia conceitual
 │
-├── components/                    # COMPONENTES DE SOFTWARE
-│   ├── pricing_component.py       # Cálculo de taxas, caução e custos totais
-│   ├── risk_evaluator_component.py# Análise de crédito e comprometimento de renda
-│   └── notification_component.py  # Despacho de mensagens e auditoria
+├── framework/                     # CAMADA DE REUSO (FRAMEWORK BASE)
+│   ├── rental_framework.py        # Classe Abstrata com Template Method
+│   ├── interfaces/                # Interfaces dos 4 Hotspots
+│   ├── components/                # 8 Componentes de Software
+│   └── applications/              # 2 Aplicacoes concretas
 │
-├── services/                      # MICROSSERVIÇOS AUTÔNOMOS
-│   ├── property_service.py        # Gestão de Casas e Apartamentos
-│   ├── contract_service.py        # Gestão de Contratos de Locação
-│   └── ai_agent_service.py        # Agente de IA com ciclo ReAct e Tool Calling
+├── microservices/                 # MICROSSERVICOS DISTRIBUIDOS
+│   ├── api_gateway/gateway.py     # Porta 8000
+│   ├── property_service/          # Porta 8001
+│   ├── contract_service/          # Porta 8002
+│   ├── ai_service/                # Porta 8003
+│   ├── risk_service/              # Porta 8004
+│   └── run_all.py                 # Orquestrador dos servicos
 │
-└── gateway/                       # COMUNICAÇÃO ENTRE SERVIÇOS
+└── gateway/                       # COMUNICACAO ENTRE SERVICOS
     └── event_bus.py               # Barramento de eventos e rastreabilidade
 ```

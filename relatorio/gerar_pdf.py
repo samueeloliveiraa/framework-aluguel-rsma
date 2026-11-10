@@ -1148,7 +1148,7 @@ Componentes plugados nos Hotspots:
     ))
 
     doc.build(story, canvasmaker=NumberedCanvas)
-    print(f"✅ Relatório Expandido gerado com sucesso em: {PDF_OUTPUT}")
+    print(f" Relatório Expandido gerado com sucesso em: {PDF_OUTPUT}")
 
 
 if __name__ == "__main__":

@@ -687,11 +687,11 @@ A Tabela 5 apresenta a listagem dos microsserviços em execução no sistema:
 
 | Microsserviço | Porta | Protocolo | Status | Endpoint de Verificação (Health) | Responsabilidade Principal |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| **API Gateway** | `8000` | HTTP/REST | 🟢 ONLINE | `http://127.0.0.1:8000/health` | Roteamento central e proxy de microsserviços |
-| **PropertyService** | `8001` | HTTP/REST | 🟢 ONLINE | `http://127.0.0.1:8001/health` | Gestão de Casas, Apartamentos e Catálogo |
-| **ContractService** | `8002` | HTTP/REST | 🟢 ONLINE | `http://127.0.0.1:8002/health` | Emissão de minutas, ciclo e assinatura de locação |
-| **AIService** | `8003` | HTTP/REST | 🟢 ONLINE | `http://127.0.0.1:8003/health` | Motor de Agente de IA e matching inteligente |
-| **RiskService** | `8004` | HTTP/REST | 🟢 ONLINE | `http://127.0.0.1:8004/health` | Análise financeira de comprometimento de renda |
+| **API Gateway** | `8000` | HTTP/REST |  ONLINE | `http://127.0.0.1:8000/health` | Roteamento central e proxy de microsserviços |
+| **PropertyService** | `8001` | HTTP/REST |  ONLINE | `http://127.0.0.1:8001/health` | Gestão de Casas, Apartamentos e Catálogo |
+| **ContractService** | `8002` | HTTP/REST |  ONLINE | `http://127.0.0.1:8002/health` | Emissão de minutas, ciclo e assinatura de locação |
+| **AIService** | `8003` | HTTP/REST |  ONLINE | `http://127.0.0.1:8003/health` | Motor de Agente de IA e matching inteligente |
+| **RiskService** | `8004` | HTTP/REST |  ONLINE | `http://127.0.0.1:8004/health` | Análise financeira de comprometimento de renda |
 
 ---
 
@@ -780,24 +780,24 @@ A execução do comando `python3 framework_aluguel/microservices/run_all.py` ini
 
 ```
 ===========================================================================
-🚀 INICIANDO ARQUITETURA DE MICROSERVIÇOS DE LOCAÇÃO (UFAL IC 2026)
+ INICIANDO ARQUITETURA DE MICROSERVIÇOS DE LOCAÇÃO (UFAL IC 2026)
 ===========================================================================
-🚀 API Gateway rodando na porta 8000...
-🏢 PropertyService rodando na porta 8001...
-📝 ContractService rodando na porta 8002...
-🤖 AIService rodando na porta 8003...
-📊 RiskService rodando na porta 8004...
+ API Gateway rodando na porta 8000...
+ PropertyService rodando na porta 8001...
+ ContractService rodando na porta 8002...
+ AIService rodando na porta 8003...
+ RiskService rodando na porta 8004...
 
 ===========================================================================
-📋 TABELA DE MICROSERVIÇOS EM EXECUÇÃO
+ TABELA DE MICROSERVIÇOS EM EXECUÇÃO
 ===========================================================================
 Microsserviço          Porta    Status       Health Endpoint
 ---------------------------------------------------------------------------
-API Gateway            8000     🟢 ONLINE     http://127.0.0.1:8000/health
-PropertyService        8001     🟢 ONLINE     http://127.0.0.1:8001/health
-ContractService        8002     🟢 ONLINE     http://127.0.0.1:8002/health
-AIService              8003     🟢 ONLINE     http://127.0.0.1:8003/health
-RiskService            8004     🟢 ONLINE     http://127.0.0.1:8004/health
+API Gateway            8000      ONLINE     http://127.0.0.1:8000/health
+PropertyService        8001      ONLINE     http://127.0.0.1:8001/health
+ContractService        8002      ONLINE     http://127.0.0.1:8002/health
+AIService              8003      ONLINE     http://127.0.0.1:8003/health
+RiskService            8004      ONLINE     http://127.0.0.1:8004/health
 ===========================================================================
 ```
 
