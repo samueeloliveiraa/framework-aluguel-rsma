@@ -82,6 +82,8 @@ O sistema contempla:
 - **Agente de Inteligência Artificial ReAct (Reasoning + Acting)** com ciclo explícito de *Thought* (Pensamento), *Action* (Uso de Ferramentas) e *Observation* (Observação de Resultados);
 - **Interface Gráfica Interativa** desenvolvida em Streamlit para demonstração visual dos componentes, chamadas de microsserviços e auditoria de eventos em tempo real.
 
+O código-fonte completo do projeto está disponível em: [https://github.com/samueeloliveiraa/framework-aluguel-rsma](https://github.com/samueeloliveiraa/framework-aluguel-rsma)
+
 ---
 
 ## 2. Metodologia Ágil

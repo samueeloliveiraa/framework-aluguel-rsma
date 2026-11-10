@@ -322,6 +322,8 @@ def generate_full_pdf():
     story.append(Paragraph("• Arquitetura distribuída com 5 microsserviços autônomos operando em portas de rede dedicadas (8000 a 8004);", body_style))
     story.append(Paragraph("• Agente de Inteligência Artificial ReAct com transparência no ciclo de percepção, raciocínio e ação;", body_style))
     story.append(Paragraph("• Interface gráfica interativa construída em Streamlit para demonstração das camadas.", body_style))
+    story.append(Spacer(1, 4))
+    story.append(Paragraph("O código-fonte completo está disponível em: <u><link href=\"https://github.com/samueeloliveiraa/framework-aluguel-rsma\">https://github.com/samueeloliveiraa/framework-aluguel-rsma</link></u>", body_style))
 
     story.append(Spacer(1, 10))
     story.append(Paragraph("2 Metodologia Ágil", h1_style))
@@ -1120,7 +1122,7 @@ Componentes plugados nos Hotspots:
         "O código-fonte completo do projeto encontra-se estruturado e versionado:",
         body_style
     ))
-    story.append(Paragraph("• Repositório do Projeto: https://github.com/samueeloliveiraa/framework-aluguel-rsma", body_style))
+    story.append(Paragraph("• <b>Repositório Oficial:</b> <u><link href=\"https://github.com/samueeloliveiraa/framework-aluguel-rsma\">https://github.com/samueeloliveiraa/framework-aluguel-rsma</link></u>", body_style))
     story.append(Paragraph(
         "A árvore do projeto organiza-se nas seguintes pastas:<br/>"
         "• framework/ — Classe base abstrata, interfaces dos 4 hotspots, 8 componentes e 2 aplicações;<br/>"
