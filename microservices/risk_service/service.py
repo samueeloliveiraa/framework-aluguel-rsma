@@ -36,7 +36,7 @@ class RiskHandler(BaseHTTPRequestHandler):
 
 def run(port=8004):
     server = HTTPServer(("0.0.0.0", port), RiskHandler)
-    print(f"📊 RiskService rodando na porta {port}...")
+    print(f"RiskService rodando na porta {port}...")
     server.serve_forever()
 
 

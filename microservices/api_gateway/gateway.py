@@ -82,7 +82,7 @@ class APIGatewayHandler(BaseHTTPRequestHandler):
 
 def run_gateway(port=8000):
     server = HTTPServer(("0.0.0.0", port), APIGatewayHandler)
-    print(f"🚀 API Gateway rodando na porta {port}...")
+    print(f"API Gateway rodando na porta {port}...")
     server.serve_forever()
 
 

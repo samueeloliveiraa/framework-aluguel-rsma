@@ -42,7 +42,7 @@ class ContractHandler(BaseHTTPRequestHandler):
 
 def run(port=8002):
     server = HTTPServer(("0.0.0.0", port), ContractHandler)
-    print(f"📝 ContractService rodando na porta {port}...")
+    print(f"ContractService rodando na porta {port}...")
     server.serve_forever()
 
 

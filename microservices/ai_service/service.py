@@ -40,7 +40,7 @@ class AIHandler(BaseHTTPRequestHandler):
 
 def run(port=8003):
     server = HTTPServer(("0.0.0.0", port), AIHandler)
-    print(f"🤖 AIService rodando na porta {port}...")
+    print(f"AIService rodando na porta {port}...")
     server.serve_forever()
 
 

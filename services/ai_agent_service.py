@@ -168,27 +168,27 @@ class RentalAIAgent:
                 descricao=f"A melhor opção é o imóvel {melhor['id']} ({melhor['titulo']}). A renda atende as regras e o risco é aceitável. O cliente pode emitir a proposta de locação no ContractService."
             ))
             parecer = (
-                f"🎯 **Parecer do Agente AI para {nome_cliente}:**\n\n"
-                f"Encontrei **{len(imoveis_avaliados)} opção(ões)** compatível(is). "
-                f"Sua melhor opção é **{melhor['titulo']}** ({melhor['tipo']}).\n\n"
-                f"📊 **Análise Financeira:**\n"
-                f"- Custo total: **R$ {melhor['custos']['total_mensal']:,.2f}/mês**\n"
+                f"**Parecer do Agente AI para {nome_cliente}:**\n\n"
+                f"Encontrei **{len(imoveis_avaliados)} opcao(oes)** compativel(is). "
+                f"Sua melhor opcao e **{melhor['titulo']}** ({melhor['tipo']}).\n\n"
+                f"**Analise Financeira:**\n"
+                f"- Custo total: **R$ {melhor['custos']['total_mensal']:,.2f}/mes**\n"
                 f"- Comprometimento de renda: **{risco_melhor['comprometimento_renda_pct']}%**\n"
-                f"- Avaliação de risco: **{risco_melhor['nivel_risco']}**\n"
+                f"- Avaliacao de risco: **{risco_melhor['nivel_risco']}**\n"
                 f"- Garantia sugerida: **{risco_melhor['garantia_exigida']}**\n\n"
-                f"💡 **Recomendação:** Seu perfil foi pré-aprovado! Você já pode gerar a minuta de contrato diretamente."
+                f"**Recomendacao:** Seu perfil foi pre-aprovado! Voce ja pode gerar a minuta de contrato diretamente."
             )
         else:
             status_geral = "ATENCAO_RISCO"
             passos.append(AgentStep(
-                etapa="Thought (Raciocínio)",
-                descricao=f"Os imóveis encontrados ultrapassam a margem segura de comprometimento financeiro para a renda informada (R$ {renda_mensal})."
+                etapa="Thought (Raciocinio)",
+                descricao=f"Os imoveis encontrados ultrapassam a margem segura de comprometimento financeiro para a renda informada (R$ {renda_mensal})."
             ))
             parecer = (
-                f"⚠️ **Parecer do Agente AI para {nome_cliente}:**\n\n"
-                f"Encontramos imóveis fisicamente compatíveis, porém a análise financeira indicou **risco elevado**.\n"
-                f"O imóvel mais próximo ({melhor['titulo']}) comprometeria **{risco_melhor['comprometimento_renda_pct']}%** da sua renda mensal.\n\n"
-                f"📌 **Solução proposta pelo Agente:** Para locar este imóvel, recomendamos compor renda com outra pessoa ou apresentar garantia locatícia adicional."
+                f"**Parecer do Agente AI para {nome_cliente}:**\n\n"
+                f"Encontramos imoveis fisicamente compativeis, porem a analise financeira indicou **risco elevado**.\n"
+                f"O imovel mais proximo ({melhor['titulo']}) comprometeria **{risco_melhor['comprometimento_renda_pct']}%** da sua renda mensal.\n\n"
+                f"**Solucao proposta pelo Agente:** Para locar este imovel, recomendamos compor renda com outra pessoa ou apresentar garantia locaticia adicional."
             )
 
         bus.log_call(

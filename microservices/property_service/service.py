@@ -78,7 +78,7 @@ class PropertyHandler(BaseHTTPRequestHandler):
 
 def run(port=8001):
     server = HTTPServer(("0.0.0.0", port), PropertyHandler)
-    print(f"🏢 PropertyService rodando na porta {port}...")
+    print(f"PropertyService rodando na porta {port}...")
     server.serve_forever()
 
 

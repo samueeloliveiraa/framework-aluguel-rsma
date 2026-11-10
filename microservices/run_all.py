@@ -30,7 +30,7 @@ SERVICES = [
 
 def start_all():
     print("=" * 75)
-    print("🚀 INICIANDO ARQUITETURA DE MICROSERVIÇOS DE LOCAÇÃO (UFAL IC 2026)")
+    print("INICIANDO ARQUITETURA DE MICROSERVICOS DE LOCACAO (UFAL IC 2026)")
     print("=" * 75)
 
     threads = []
@@ -42,18 +42,18 @@ def start_all():
 
     time.sleep(0.8)
     print("\n" + "=" * 75)
-    print("📋 TABELA DE MICROSERVIÇOS EM EXECUÇÃO")
+    print("TABELA DE MICROSERVICOS EM EXECUCAO")
     print("=" * 75)
-    print(f"{'Microsserviço':<22} {'Porta':<8} {'Status':<12} {'Health Endpoint'}")
+    print(f"{'Microsservico':<22} {'Porta':<8} {'Status':<12} {'Health Endpoint'}")
     print("-" * 75)
 
     for name, port, _ in SERVICES:
         url = f"http://127.0.0.1:{port}/health"
         try:
             with urllib.request.urlopen(url, timeout=2) as resp:
-                status = "🟢 ONLINE" if resp.status == 200 else f"🟡 {resp.status}"
+                status = "[ONLINE]" if resp.status == 200 else f"[{resp.status}]"
         except Exception:
-            status = "🔴 OFFLINE"
+            status = "[OFFLINE]"
         print(f"{name:<22} {port:<8} {status:<12} {url}")
 
     print("=" * 75)

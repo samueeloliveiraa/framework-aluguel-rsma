@@ -70,11 +70,11 @@ class CReActAIAgent(IAIAgentEngine):
         if recomendacoes:
             melhor = recomendacoes[0]
             parecer = (
-                f"🎯 **Parecer do Agente ReAct:** Recomendo o imóvel **{melhor['titulo']}** ({melhor['tipo']}). "
+                f"**Parecer do Agente ReAct:** Recomendo o imovel **{melhor['titulo']}** ({melhor['tipo']}). "
                 f"Possui score de afinidade de **{melhor['score_agente']}/100** com comprometimento de **{melhor['comprometimento_estimado_pct']}%** da renda."
             )
         else:
-            parecer = f"⚠️ Não encontramos imóveis que atendam conjuntamente a todos os requisitos solicitados por {nome}."
+            parecer = f"Aviso: Nao encontramos imoveis que atendam conjuntamente a todos os requisitos solicitados por {nome}."
 
         return {
             "motor": self.get_agent_name(),
